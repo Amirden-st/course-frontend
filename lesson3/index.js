@@ -1,6 +1,5 @@
 // Functions - Функции
-// Глабальная область видимости
-var people = [// Meerim1
+var people = [
     {
         name: 'Adilet',
         salary: 23000,
@@ -44,7 +43,7 @@ var people = [// Meerim1
     },
 ]
 
-//                arguments
+//     имя функции  аргументы
 function increase(name, sum) {
     for (var i = 0; i < people.length; i++) {
         if (people[i].name === name) {
@@ -53,23 +52,17 @@ function increase(name, sum) {
     }
 }
 
-
+// вызов функции выполнит код внутри функции
 increase('Meerim1', 1000)
 increase('Syimyk', 5000)
 
 
 console.log(people)
-// method
-// people[5] = {
-//     name: 'Firdavs',
-//     salary: 290000
-// }
 
 
-
-
+// методы
 var cat = {
-    // method
+    // метод - функция, которая находится внутри какого-либо объекта
     sayHello: function () {
         console.log('Say mey')
         increaseSalaries()
@@ -77,15 +70,30 @@ var cat = {
     name: 'Cat'
 }
 
-// cat.sayHello()
+// вызов метода объекта
+cat.sayHello()
 
 
-// sayHello()
-// console.log(window)
-console.log(people)
-people.push({name: 'Firdavs', salary: 290000})
+// Область видимости - область в которой лежит переменаая
+// sayHello находится в другой области видимости - внутри cat, поэтому JS её не увидит
+// Область видимости в которой мы создали массив people, объект cat, функцию increase  называется глобальной
+var globalVar = 'Я глобальная переменная'
+function testFunction() {
+    // Мы можем использовать переменные, которые находятся выше по области видимости, но не наоборот!
+    console.log(globalVar)
+    var innerVariable = 'Я переменная внутри функции'
+}
 
-var variable // undefined
+
+// Запись снизу вызовет ошибку, так как эта переменная определена внутри другой области видимости
+// console.log(innerVariable)
+
+
+// В JS у разных типов данных есть встроенные методы
+people.push({name: 'Firdavs', salary: 290000}) // Например: у массивов есть метод push, чтобы
+// добавить элемент в самый конец массива
+
+
 
 // function declaration
 function increaseSalaries() {
@@ -107,10 +115,3 @@ var testFunc = function () {
 
 }
 
-
-
-// increaseSalaries()
-// increaseSalaries()
-
-
-// console.log(people)
