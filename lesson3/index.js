@@ -115,3 +115,18 @@ var testFunc = function () {
 
 }
 
+
+var products = [
+    {
+        productName: 'milk',
+        cost: 48
+    },
+    {
+        productName: 'bread',
+        cost: 20
+    },
+    {
+        productName: 'egg',
+        cost: 11
+    },
+]
