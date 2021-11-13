@@ -90,3 +90,4 @@ console.log(reduce(array, add))
 var blueSquare = document.getElementById('square')
 blueSquare.style.background = 'red'
 
+console.log('test')
