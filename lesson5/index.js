@@ -3,9 +3,31 @@ var state = 0
 
 var label = document.getElementById('label')
 var btns = document.getElementsByClassName('button')
+// ДЗ 1
+// =====================================
+// Тут без подсказок :)
+
+
+
+// =====================================
+
 
 label.innerText = 0
 
+// ДЗ 2
+// =====================================
+
+// Значение которое ввёл пользователь в поле ввода
+var input = document.getElementById('input')
+
+input.value = ''
+// ПОДСКАЗКА: чтобы получить значение, которое получил пользователь в текстовое поле, используйте: input.value
+
+var setBtn = document.getElementById('set')
+
+// ....
+
+// =====================================
 
 btns[0].addEventListener('click', function () {
     state += 1
@@ -96,7 +118,7 @@ function render() {
     }
 }
 
-// ДЗ
+// ДЗ 3
 // ============================================
 
 var newGameBtn = document.getElementById('new-game')
