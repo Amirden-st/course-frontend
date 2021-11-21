@@ -59,10 +59,10 @@ var gameState = {
 var fields = document.getElementsByClassName('field')
 
 function start() {
+    // var i = 9
     // Обходим кнопки и добавляем к ним обработчики клика
     for (let i = 0; i < fields.length; i++) {
         // переменная для удобства
-        var field = fields[i]
 
         field.addEventListener('click', function () {
             // в случае клика на этот квадратик, заполняем его знаком игрока
@@ -73,7 +73,7 @@ function start() {
 
             // Проверяем на победу
             check()
-
+            console.log(gameState.fields)
             // Меняем игркоа, так как он уже сделал ход: Если это крестик, то меняем игрока на нолик.
             // Если же нет, то значит, что ходил нолик. Поэтому даём ход крестику
             gameState.player = gameState.player === 'X' ? '0' : 'X'
@@ -124,7 +124,13 @@ function render() {
 var newGameBtn = document.getElementById('new-game')
 
 
-// ....
+newGameBtn.addEventListener('click', function () {
+    for (var i = 0; i < gameState.fields.length; i++) {
+        gameState.fields[i] = ''
+    }
+    gameState.player = 'X'
+    render()
+})
 
 
 // ============================================
